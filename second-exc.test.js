@@ -40,6 +40,10 @@ describe('Subtracting two numbers', () => {
             calculator.subCalculator(5/0, 3)}
         ).toThrow('Parameters must not be infinity');
     });
+
+    test('Arguments are not passed', () => {
+        expect(() => {calculator.subCalculator()}).toThrow('Parameters cannot be undefined');
+    });
 });
 
 describe('Multiplication two numbers', () => {
@@ -81,6 +85,10 @@ describe('Multiplication two numbers', () => {
         expect(() => {
             calculator.multiplicationCalculator(5/0, 3)}
         ).toThrow('Parameters must not be infinity');
+    });
+
+    test('Arguments are not passed', () => {
+        expect(() => {calculator.multiplicationCalculator()}).toThrow('Parameters cannot be undefined');
     });
 });
 
@@ -130,10 +138,18 @@ describe('Dividing two numbers', () => {
             calculator.divideCalculator(5/0, 3)}
         ).toThrow('Parameters must not be infinity');
     });
+
+    test('Arguments are not passed', () => {
+        expect(() => {calculator.divideCalculator()}).toThrow('Parameters cannot be undefined');
+    });
 });
 
 
 describe('Adding few numbers', () => {
+    test('Arguments are not passed', () => {
+        expect(() => {calculator.addCalculator()}).toThrow('You have to give function parameters');
+    });
+
     test('Basic functionality', () => {
        expect(calculator.addCalculator(6, 3, 2)).toBe(11);
     });

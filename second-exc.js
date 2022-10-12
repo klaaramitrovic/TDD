@@ -16,6 +16,8 @@ function divideCalculator(a, b) {
 }
 
 function addCalculator(...args) {
+    if(args == undefined || args == null || args.length == 0)
+        throw new Error('You have to give function parameters')
     args.forEach(x => checkCalcParameter(x))
     return args.reduce((prevValue, currValue) => prevValue + currValue)
 }
