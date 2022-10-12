@@ -44,6 +44,10 @@ describe('Subtracting two numbers', () => {
     test('Arguments are not passed', () => {
         expect(() => {calculator.subCalculator()}).toThrow('Parameters cannot be undefined');
     });
+
+    test('Argument are not passed', () => {
+        expect(() => {calculator.subCalculator(1)}).toThrow('Parameters cannot be undefined');
+    });
 });
 
 describe('Multiplication two numbers', () => {
@@ -89,6 +93,10 @@ describe('Multiplication two numbers', () => {
 
     test('Arguments are not passed', () => {
         expect(() => {calculator.multiplicationCalculator()}).toThrow('Parameters cannot be undefined');
+    });
+
+    test('Argument are not passed', () => {
+        expect(() => {calculator.multiplicationCalculator(1)}).toThrow('Parameters cannot be undefined');
     });
 });
 
@@ -141,6 +149,10 @@ describe('Dividing two numbers', () => {
 
     test('Arguments are not passed', () => {
         expect(() => {calculator.divideCalculator()}).toThrow('Parameters cannot be undefined');
+    });
+
+    test('Argument are not passed', () => {
+        expect(() => {calculator.divideCalculator(1)}).toThrow('Parameters cannot be undefined');
     });
 });
 
