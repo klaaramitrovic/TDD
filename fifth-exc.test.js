@@ -44,15 +44,7 @@ describe('Mocking', () => {
         {
             "country_id": "TR",
             "probability": 0.032
-        }], result, 1)).toEqual([
-            { country_id: 'SRB', probability: 0.0656 },
-            { country_id: 'NE', probability: 0.034 },
-            { country_id: 'US', probability: 0.061 },
-            { country_id: 'NG', probability: 0.073 },
-            { country_id: 'PH', probability: 0.084 },
-            { country_id: 'GH', probability: 0.224 },
-            { country_id: 'TR', probability: 0.032 }
-          ]);
+        }], result, 1)).toEqual(expect.arrayContaining(result));
 
         expect(mockFunction.removeFromArray([
             { country_id: 'SRB', probability: 0.0656 },
@@ -63,6 +55,6 @@ describe('Mocking', () => {
             { country_id: 'GH', probability: 0.224 },
             { country_id: 'TR', probability: 0.032 }
           ], 
-          result)).toEqual([{"country_id": "SRB", "probability": 0.0656}, {"country_id": "TR", "probability": 0.032}]);
+          result)).toEqual(expect.not.arrayContaining(result));
     });   
 })
